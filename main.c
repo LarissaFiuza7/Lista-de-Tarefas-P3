@@ -16,7 +16,8 @@ int main() {
     printf("1. Cadastrar Tarefa\n");
     printf("2. Deletar Tarefa\n");
     printf("3. Listar Tarefas\n");
-    printf("4. Sair\n");
+    printf("4. Alterar Tarefa\n");
+    printf("5. Sair\n");
     printf("Escolha uma opção: ");
 
     char entrada[100];
@@ -44,6 +45,18 @@ int main() {
         listarTarefas(lista);
         break;
       case 4:
+        if (lista.qtd > 0) {
+          int indice;
+          printf("Digite o índice da tarefa a ser alterada: ");
+          scanf("%d", &indice);
+          getchar(); // Limpa o caractere de nova linha pendente
+          alterarTarefa(&lista, indice);
+          salvarLista(lista, "tarefas.bin");
+        } else {
+          printf("A lista de tarefas está vazia. Nada para alterar.\n");
+        }
+        break;
+      case 5:
         sair = 1;
         break;
       default:
