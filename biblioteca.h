@@ -6,7 +6,7 @@ typedef struct {
   int prioridade;
   char categoria[100];
   char descricao[300];
-  char estado[100];
+  char estado[20];
 } Tarefa;
 
 // Cria a lista de tarefas
@@ -23,6 +23,8 @@ void salvarLista(ListaDeTarefas lt, const char *tarefas);
 void carregarLista(ListaDeTarefas *lt, const char *tarefas);
 void alterar_Tarefa(ListaDeTarefas*lt, int indice);
 void alterarTarefa(ListaDeTarefas *lt, int indice);
+void filtrar_prioridade(ListaDeTarefas lt, int prioridade);
+
 
 
 #endif // PROJET_1_BIBLIOTECA_H
